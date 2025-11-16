@@ -14,6 +14,9 @@ public class StringAspect {
 
     @After("stringReturning()")
     public void after(JoinPoint joinPoint) {
-        System.out.println("Method " + joinPoint.getSignature().getName() + " was called and returned a string");
+        System.out.printf(
+            "Method %s was called and returned a string%n",
+            joinPoint.getSignature().getName()
+        );
     }
 }
