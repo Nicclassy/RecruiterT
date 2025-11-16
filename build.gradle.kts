@@ -4,6 +4,7 @@ plugins {
     id("io.freefair.lombok") version "9.1.0"
     id("io.spring.dependency-management") version "1.1.7"
     id("org.springframework.boot") version "3.5.7"
+    kotlin("jvm") version "2.2.20"
 }
 
 apply(plugin = "io.freefair.aspectj.post-compile-weaving")
@@ -42,6 +43,9 @@ dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+    // Other
+    testImplementation(kotlin("test"))
 }
 
 tasks.register("run", org.springframework.boot.gradle.tasks.run.BootRun::class) {
@@ -55,4 +59,8 @@ tasks.withType<JavaCompile> {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+kotlin {
+    jvmToolchain(22)
 }

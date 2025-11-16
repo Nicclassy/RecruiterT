@@ -6,6 +6,8 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
+import org.recruitert.utils.StringUtils;
+
 @Aspect
 @Component
 public class StringAspect {
@@ -14,9 +16,10 @@ public class StringAspect {
 
     @After("stringReturning()")
     public void after(JoinPoint joinPoint) {
-        System.out.printf(
-            "Method %s was called and returned a string%n",
-            joinPoint.getSignature().getName()
-        );
+        System.out.println(StringUtils.concatenate(
+            "Method",
+            joinPoint.getSignature().getName(),
+            "was called and returned a string"
+        ));
     }
 }
