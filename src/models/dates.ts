@@ -5,7 +5,7 @@ dayjs.extend(duration);
 
 export type DateDistance = {
     readonly unit: "seconds" | "minutes" | "hours" | "days" | "weeks" | "months" | "years";
-    readonly amount: number;
+    readonly unitAmount: number;
 }
 
 export function dateDistance(from: Date, to: Date): DateDistance {
@@ -17,50 +17,50 @@ export function dateDistance(from: Date, to: Date): DateDistance {
     if (years > 0)
         return {
             unit: "years",
-            amount: years
+            unitAmount: years
         };
 
     const months = diff.months();
     if (months > 0)
         return {
             unit: "months",
-            amount: months,
+            unitAmount: months,
         };
 
     const weeks = diff.weeks();
     if (weeks > 0)
         return {
             unit: "weeks",
-            amount: weeks
+            unitAmount: weeks
         };
 
     const days = diff.days();
     if (days > 0)
         return {
             unit: "days",
-            amount: days
+            unitAmount: days
         };
 
     const hours = diff.hours();
     if (hours > 0)
         return {
             unit: "hours",
-            amount: hours
+            unitAmount: hours
         };
 
     const minutes = diff.minutes();
     if (minutes > 0)
         return {
             unit: "minutes",
-            amount: minutes
+            unitAmount: minutes
         };
 
     return {
         unit: "seconds",
-        amount: diff.seconds()
+        unitAmount: diff.seconds()
     };
 }
 
 export function formatUnit(dist: DateDistance): string {
-    return dist.amount == 1 ? dist.unit.slice(0, -1) : dist.unit;
+    return dist.unitAmount == 1 ? dist.unit.slice(0, -1) : dist.unit;
 }

@@ -1,13 +1,13 @@
 @import "tailwindcss";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @theme {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: var(--font-noto-sans);
 }
 
 .source {
-    @apply rounded-full p-1;
+    @apply rounded-full px-2 py-1 text-sm;
+}
+
+.posting-options {
+    @apply bg-gray-300 p-2 gap-2 text-sm rounded-xl
 }
