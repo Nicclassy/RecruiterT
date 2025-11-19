@@ -1,11 +1,15 @@
 import { type JobPostingInfo, PostingSource } from "@/models/posting";
 import { SavePostingButton, ExternalJobLink, PostingOptionsButton } from "@/components/buttons";
-import { type DateDistance, dateDistance, formatUnit } from "@/models/dates";
+import { type DateDistance, dateDistance, formatTimeInfo } from "@/models/dates";
 import * as Sources from "@/components/sources";
 
 function JobExpiry({ date, posting }: { date: Date, posting: JobPostingInfo }) {
     function displayRedText(expiry: DateDistance) {
-        return expiry.unit === "hours" || expiry.unit === "minutes" || expiry.unit === "seconds";
+        return (
+            expiry.larger.unit === "hours"
+            || expiry.larger.unit === "minutes"
+            || expiry.larger.unit === "seconds"
+        );
     }
 
     const postingHasExpired = date >= posting.expiryDate;
@@ -14,16 +18,16 @@ function JobExpiry({ date, posting }: { date: Date, posting: JobPostingInfo }) {
         : dateDistance(date, posting.expiryDate);
 
     if (postingHasExpired)
-        return <span className="opacity-70">Expired {expiry.unitAmount} {formatUnit(expiry)} ago</span>;
+        return <span className="opacity-70">Expired {formatTimeInfo(expiry)} ago</span>;
 
     if (displayRedText(expiry))
-        return <span className="opacity-70 text-red-500">Expires in {expiry.unitAmount} {formatUnit(expiry)}</span>;
-    return <span className="opacity-70">Expires in {expiry.unitAmount} {formatUnit(expiry)}</span>;
+        return <span className="opacity-70 text-red-500">Expires in {formatTimeInfo(expiry)}</span>;
+    return <span className="opacity-70">Expires in {formatTimeInfo(expiry)}</span>;
 }
 
 function JobPosted({ date, posting }: { date: Date, posting: JobPostingInfo }) {
     const posted = dateDistance(posting.postingDate, date);
-    return <p>Posted {posted.unitAmount} {formatUnit(posted)} ago</p>;
+    return <p>Posted {formatTimeInfo(posted)} ago</p>;
 }
 
 export default function JobPosting({ posting }: { posting: JobPostingInfo }) {
@@ -32,9 +36,10 @@ export default function JobPosting({ posting }: { posting: JobPostingInfo }) {
         <div className="flex flex-col px-6 py-3 gap-1 border border-gray-300 rounded-[35px]">
             <div className="flex flex-col gap-2">
                 <div>
-                    <div className="flex flex-row">
+                    <div className="flex flex-row gap-2">
                         <h2 className="font-semibold text-lg">{posting.title}</h2>
                         <div className="flex-grow" />
+                        <div />
                         <PostingOptionsButton posting={posting} />
                         <div />
                     </div>

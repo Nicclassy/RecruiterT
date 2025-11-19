@@ -3,64 +3,87 @@ import duration from "dayjs/plugin/duration";
 
 dayjs.extend(duration);
 
+const UNIT_ORDER = [
+    "years",
+    "months",
+    "weeks",
+    "days",
+    "hours",
+    "minutes",
+    "seconds",
+] as const;
+
+type TimeUnit = typeof UNIT_ORDER[number];
+
 export type DateDistance = {
-    readonly unit: "seconds" | "minutes" | "hours" | "days" | "weeks" | "months" | "years";
-    readonly unitAmount: number;
+    readonly milliseconds: number;
+    readonly larger: {
+        readonly unit: TimeUnit;
+        readonly unitAmount: number;
+    };
+    readonly smaller?: {
+        readonly unit: TimeUnit;
+        readonly unitAmount: number;
+    };
 }
 
 export function dateDistance(from: Date, to: Date): DateDistance {
     const diff = dayjs.duration(
         dayjs(to).diff(dayjs(from))
     );
-    
-    const years = diff.years();
-    if (years > 0)
+
+    const values: Record<TimeUnit, number> = {
+        years: diff.years(),
+        months: diff.months(),
+        weeks: diff.weeks(),
+        days: diff.days(),
+        hours: diff.hours(),
+        minutes: diff.minutes(),
+        seconds: diff.seconds(),
+    };
+
+    const index = UNIT_ORDER.findIndex(unit => values[unit] > 0);
+    if (index === -1)
         return {
-            unit: "years",
-            unitAmount: years
+            milliseconds: 0,
+            larger: {
+                unit: "seconds",
+                unitAmount: values["seconds"],
+            }
         };
 
-    const months = diff.months();
-    if (months > 0)
+    const milliseconds = to.getTime() - from.getTime();
+    const largerUnit = UNIT_ORDER[index]!;
+    const smallerUnit = UNIT_ORDER[index + 1]!;
+    if (values[smallerUnit] == 0)
         return {
-            unit: "months",
-            unitAmount: months,
-        };
-
-    const weeks = diff.weeks();
-    if (weeks > 0)
-        return {
-            unit: "weeks",
-            unitAmount: weeks
-        };
-
-    const days = diff.days();
-    if (days > 0)
-        return {
-            unit: "days",
-            unitAmount: days
-        };
-
-    const hours = diff.hours();
-    if (hours > 0)
-        return {
-            unit: "hours",
-            unitAmount: hours
-        };
-
-    const minutes = diff.minutes();
-    if (minutes > 0)
-        return {
-            unit: "minutes",
-            unitAmount: minutes
-        };
+            milliseconds,
+            larger: {
+                unit: largerUnit,
+                unitAmount: values[largerUnit]
+            }
+        }
 
     return {
-        unit: "seconds",
-        unitAmount: diff.seconds()
+        milliseconds,
+        larger: {
+            unit: largerUnit,
+            unitAmount: values[largerUnit]
+        },
+        smaller: {
+            unit: smallerUnit,
+            unitAmount: values[smallerUnit]
+        }
     };
 }
 
-export function formatUnit(dist: DateDistance): string {
-    return dist.unitAmount == 1 ? dist.unit.slice(0, -1) : dist.unit;
+export function formatTimeInfo(dist: DateDistance): string {
+    function formatUnit(unit: TimeUnit, amount: number): string {
+        return amount === 1 ? unit.slice(0, -1) : unit;
+    }
+
+    let info = `${dist.larger.unitAmount} ${formatUnit(dist.larger.unit, dist.larger.unitAmount)}`;
+    if (dist.smaller)
+        info += ` and ${dist.smaller.unitAmount} ${formatUnit(dist.smaller.unit, dist.smaller.unitAmount)}`;
+    return info;
 }
