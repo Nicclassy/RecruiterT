@@ -1,7 +1,11 @@
 @import "tailwindcss";
 
+:root {
+    --primary: #7483E6;
+}
+
 @theme {
-  --font-sans: var(--font-noto-sans);
+    --font-sans: var(--font-noto-sans);
 }
 
 .source {
@@ -9,5 +13,13 @@
 }
 
 .posting-options {
-    @apply bg-gray-300 p-2 gap-2 text-sm rounded-xl
+    @apply bg-gray-200 text-sm rounded-xl;
+}
+
+.primary-colour-hover {
+    @apply hover:text-white hover:bg-(--primary);
+}
+
+.item-heading {
+    @apply p-5 font-semibold rounded-t-3xl text-center text-xl;
 }
