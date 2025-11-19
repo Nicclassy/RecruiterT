@@ -44,7 +44,7 @@ dependencies {
     testAnnotationProcessor("org.projectlombok:lombok:1.18.42")
 
     // Playwright
-    testImplementation("com.microsoft.playwright:playwright:1.41.0")
+    implementation("com.microsoft.playwright:playwright:1.55.0")
 
     // JUnit
     testImplementation(platform("org.junit:junit-bom:5.10.0"))

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4bf581c8-379d-4c90-8c03-195c2d9e5953" name="Changes" comment="Update layout and add app title">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/postings/home/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/postings/home/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/buttons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/buttons.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/posting.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/posting.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sources.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sources.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/StringUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/recruitert/utils/StringUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/dates.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/dates.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="RecruiterT" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Nicclassy&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Nicclassy/RecruiterT.git&quot;,
+    &quot;accountId&quot;: &quot;3b349dc1-3f5f-47f6-bac0-6f47af992fa7&quot;
+  }
+}</component>
+  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="$USER_HOME$/.gradle/wrapper/dists/gradle-9.2.1-bin/2t0n5ozlw9xmuyvbp7dnzaxug/gradle-9.2.1" javaHome="/Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home" gradleVersion="9.2.1" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="35aKPmHPkKKle82IpWYd8z4EyOq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RecruiterT [:org.recruitert.services.scraping.WorkdayScraper.main()].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHELLCHECK.PATH&quot;: &quot;/Users/luca/Library/Application Support/JetBrains/IntelliJIdea2025.2/plugins/Shell Script/shellcheck&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
+    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/luca/WebstormProjects/RecruiterT&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/luca/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="org.recruitert.utils" />
+      <recent name="org.recruitert.services.scraping" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.Next.js: debug client-side">
+    <configuration name="WorkdayScraper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.recruitert.services.scraping.WorkdayScraper" />
+      <module name="org.recruitert.RecruiterT.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.recruitert.services.scraping.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
+      <method v="2" />
+    </configuration>
+    <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="org.recruitert.RecruiterT.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.recruitert.Main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Next.js: server-side" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-WS-252.27397.92" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4bf581c8-379d-4c90-8c03-195c2d9e5953" name="Changes" comment="" />
+      <created>1763342721752</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1763342721752</updated>
+      <workItem from="1763342729867" duration="5024000" />
+      <workItem from="1763349299118" duration="344000" />
+      <workItem from="1763349663996" duration="75000" />
+      <workItem from="1763349755844" duration="145000" />
+      <workItem from="1763349909828" duration="2600000" />
+      <workItem from="1763371277121" duration="652000" />
+      <workItem from="1763374760228" duration="712000" />
+      <workItem from="1763376925518" duration="19000" />
+      <workItem from="1763376951495" duration="2280000" />
+      <workItem from="1763417935540" duration="1724000" />
+      <workItem from="1763419678755" duration="100000" />
+      <workItem from="1763419916170" duration="12000" />
+      <workItem from="1763419936223" duration="16465000" />
+      <workItem from="1763438676075" duration="1373000" />
+      <workItem from="1763440090131" duration="4068000" />
+      <workItem from="1763444421675" duration="363000" />
+      <workItem from="1763463688877" duration="5178000" />
+      <workItem from="1763503206165" duration="4192000" />
+      <workItem from="1763515793334" duration="191000" />
+      <workItem from="1763516011058" duration="10000" />
+      <workItem from="1763516027399" duration="915000" />
+    </task>
+    <task id="LOCAL-00001" summary="Implement posting component">
+      <option name="closed" value="true" />
+      <created>1763418526987</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1763418526987</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Use Noto Sans and add grid for postings">
+      <option name="closed" value="true" />
+      <created>1763418617640</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1763418617640</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Use Noto Sans and add grid for postings">
+      <option name="closed" value="true" />
+      <created>1763418680467</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1763418680467</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Create a JPA entity `JobPosting` and a `PostingSource` model">
+      <option name="closed" value="true" />
+      <created>1763419111754</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1763419111754</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add Postgres via Docker Compose and configure Spring Boot accordingly">
+      <option name="closed" value="true" />
+      <created>1763419455896</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1763419455896</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Enhance locator robustness and selector flexibility">
+      <option name="closed" value="true" />
+      <created>1763516190520</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1763516190520</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Create section headings component">
+      <option name="closed" value="true" />
+      <created>1763516687088</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1763516687088</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Update layout and add app title">
+      <option name="closed" value="true" />
+      <created>1763516826231</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1763516826231</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Implement posting component" />
+    <MESSAGE value="Use Noto Sans and add grid for postings" />
+    <MESSAGE value="Create a JPA entity `JobPosting` and a `PostingSource` model" />
+    <MESSAGE value="Add Postgres via Docker Compose and configure Spring Boot accordingly" />
+    <MESSAGE value="Enhance locator robustness and selector flexibility" />
+    <MESSAGE value="Create section headings component" />
+    <MESSAGE value="Update layout and add app title" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update layout and add app title" />
+  </component>
+</project>
