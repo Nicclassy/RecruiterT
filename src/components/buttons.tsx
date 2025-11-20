@@ -1,21 +1,67 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRightIcon, BookmarkIcon } from "@heroicons/react/24/outline";
-import type { JobPosting } from "@/models/posting";
+import { ArrowRightIcon, BookmarkIcon, EllipsisHorizontalIcon } from "@heroicons/react/24/outline";
+import type { JobPostingInfo } from "@/models/posting";
+import { useEffect, useRef, useState } from "react";
 
-export function ExternalJobLink({ posting }: { posting: JobPosting }) {
+export function PostingOptionsButton({ posting }: { posting: JobPostingInfo }) {
+    const [isOpen, setIsOpen] = useState(false);
+    const ref = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        function handleClick(event: MouseEvent) {
+            if (ref.current && !ref.current.contains(event.target as Node))
+                setIsOpen(false);
+        }
+
+        if (isOpen)
+            document.addEventListener("mousedown", handleClick);
+        return () => document.removeEventListener("mousedown", handleClick);
+    }, [isOpen]);
+
+    return <div className="relative inline-block" ref={ref}>
+        <button className="w-10 h-10" onClick={() => setIsOpen(!isOpen)}>
+            <EllipsisHorizontalIcon className="hover:stroke-(--primary)"/>
+        </button>
+
+        {isOpen && (
+        <div
+            className="posting-options absolute right-0 -translate-y-2.5 flex flex-col z-10"
+        >
+            <button
+                className="primary-colour-hover w-full text-left py-1 px-3 rounded-t-lg"
+                onClick={() => {
+                    setIsOpen(false)
+                }}
+            >
+                Archive
+            </button>
+            <button
+                className="primary-colour-hover w-full text-left py-1 px-3 rounded-b-lg"
+                onClick={() => {
+                    setIsOpen(false)
+                }}
+            >
+                Ignore
+            </button>
+        </div>
+        )}
+    </div>;
+}
+
+export function ExternalJobLink({ posting }: { posting: JobPostingInfo }) {
     return <>
         <Link href={posting.url} className="border-blue-500">
-            <ArrowRightIcon className="w-10 h-10 p-1 text-white bg-[#7483E6] rounded-md" />
+            <ArrowRightIcon className="w-10 h-10 p-1 text-white bg-(--primary) rounded-md" />
         </Link>
     </>;
 }
 
-export function SavePostingButton({ posting }: { posting: JobPosting }) {
+export function SavePostingButton({ posting }: { posting: JobPostingInfo }) {
     return <>
         <button onClick={() => { void posting; }}>
-            <BookmarkIcon className="w-10 h-10" />
+            <BookmarkIcon className="w-10 h-10 hover:stroke-(--primary)" />
         </button>
     </>;
 }
@@ -30,7 +76,7 @@ export function SettingsButton() {
             viewBox="0 0 24 24"
             strokeWidth={0.0}
             stroke="gray"
-            className="size-6 w-10 h-10"
+            className="w-12 h-12"
         >
             <path
                 strokeLinecap="round"
@@ -41,7 +87,7 @@ export function SettingsButton() {
             <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                fill="white"
+                fill="#f7f7f7"
                 d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
             />
         </svg>
