@@ -10,6 +10,12 @@ abstract class ManagedLocator {
 
     @Throws(TimeoutError::class)
     fun locate(): Locator {
+        return tryLocate() ?: throw TimeoutError(
+            "Could not locate ${selectors.joinToString(", ")}"
+        )
+    }
+
+    fun tryLocate(): Locator? {
         for (selector in selectors) {
             val locator = elementLocator(selector)
             try {
@@ -20,7 +26,21 @@ abstract class ManagedLocator {
             return locator
         }
 
-        throw TimeoutError("Could not locate $selectors")
+        return null
+    }
+
+    fun waitUntilPresent() {
+        for (selector in selectors) {
+            val locator = elementLocator(selector)
+            try {
+                locator.waitFor(options)
+            } catch (_: TimeoutError) {
+                continue
+            }
+            return
+        }
+
+        throw TimeoutError("Could not locate ${selectors.joinToString(", ")}")
     }
 }
 
