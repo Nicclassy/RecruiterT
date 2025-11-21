@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4bf581c8-379d-4c90-8c03-195c2d9e5953" name="Changes" comment="Update layout and add app title">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="4bf581c8-379d-4c90-8c03-195c2d9e5953" name="Changes" comment="Add Prettier and ESLint configs">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/postings/home/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/postings/home/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/buttons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/buttons.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/posting.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/posting.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/sources.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sources.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/StringUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/recruitert/utils/StringUtils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/dates.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/dates.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,12 +56,12 @@
     &quot;assignee&quot;: &quot;Nicclassy&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Nicclassy/RecruiterT.git&quot;,
-    &quot;accountId&quot;: &quot;3b349dc1-3f5f-47f6-bac0-6f47af992fa7&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Nicclassy/RecruiterT.git",
+    "accountId": "37f76d40-b49b-4550-9404-f5a726738e35"
   }
-}</component>
+}]]></component>
   <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="$USER_HOME$/.gradle/wrapper/dists/gradle-9.2.1-bin/2t0n5ozlw9xmuyvbp7dnzaxug/gradle-9.2.1" javaHome="/Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home" gradleVersion="9.2.1" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -100,8 +96,8 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/luca/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/luca/WebstormProjects/RecruiterT/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -149,7 +145,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-WS-252.27397.92" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
       </set>
     </attachedChunks>
   </component>
@@ -181,6 +178,8 @@
       <workItem from="1763515793334" duration="191000" />
       <workItem from="1763516011058" duration="10000" />
       <workItem from="1763516027399" duration="915000" />
+      <workItem from="1763635766856" duration="143000" />
+      <workItem from="1763687344548" duration="986000" />
     </task>
     <task id="LOCAL-00001" summary="Implement posting component">
       <option name="closed" value="true" />
@@ -246,7 +245,63 @@
       <option name="project" value="LOCAL" />
       <updated>1763516826231</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Refactor Java/Kotlin code">
+      <option name="closed" value="true" />
+      <created>1763605845868</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1763605845868</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Add `RelativeDateParser`&#10;&#10;Uses @JvmName for differing semantics in Java/Kotlin. This is so that in Kotlin the function would be more appropriate (a top level function), whereas in Java, it would be bound to a class">
+      <option name="closed" value="true" />
+      <created>1763606094477</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1763606094477</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Add posting options button and job posting grid">
+      <option name="closed" value="true" />
+      <created>1763606457742</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1763606457742</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Implement an interface `JobPostingExtractor` for creating `JobPosting`s">
+      <option name="closed" value="true" />
+      <created>1763606750912</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1763606750912</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Find and extract data from individual external Workday postings">
+      <option name="closed" value="true" />
+      <created>1763606894585</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1763606894585</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Implement parallel extraction of job postings for external Workday">
+      <option name="closed" value="true" />
+      <created>1763687413677</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1763687413677</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Add Prettier and ESLint configs">
+      <option name="closed" value="true" />
+      <created>1763687581350</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1763687581350</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,6 +315,17 @@
     <MESSAGE value="Enhance locator robustness and selector flexibility" />
     <MESSAGE value="Create section headings component" />
     <MESSAGE value="Update layout and add app title" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update layout and add app title" />
+    <MESSAGE value="Refactor Java/Kotlin code" />
+    <MESSAGE value="Add `RelativeDateParser`&#10;&#10;Uses @JvmName for differing semantics in Java/Kotlin. This is so that in Kotlin the function would be more appropriate (a top level function), whereas in Java, it would be bound to a class" />
+    <MESSAGE value="Add posting options button and job posting grid" />
+    <MESSAGE value="Implement an interface `JobPostingExtractor` for creating `JobPosting`s" />
+    <MESSAGE value="Find and extract data from individual external Workday postings" />
+    <MESSAGE value="Implement parallel extraction of job postings for external Workday" />
+    <MESSAGE value="Add Prettier and ESLint configs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Prettier and ESLint configs" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

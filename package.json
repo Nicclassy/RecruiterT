@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "prepare": "husky install",
     "build": "next build",
     "check": "next lint && tsc --noEmit",
     "dev": "next dev --turbo",
@@ -11,9 +12,16 @@
     "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
+    "lint-staged": "lint-staged",
     "preview": "next build && next start",
     "start": "next start",
     "typecheck": "tsc --noEmit"
+  },
+  "lint-staged": {
+    "**/*": [
+      "pnpm run lint",
+      "pnpm run fomrat"
+    ]
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -27,12 +35,17 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.39.1",
     "@tailwindcss/postcss": "^4.0.15",
     "@types/node": "^20.14.10",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "eslint": "^9.23.0",
     "eslint-config-next": "^15.2.3",
+    "eslint-config-prettier": "^10.1.8",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "playwright": "^1.56.1",
     "postcss": "^8.5.3",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
