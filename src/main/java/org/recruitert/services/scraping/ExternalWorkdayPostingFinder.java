@@ -3,6 +3,7 @@ package org.recruitert.services.scraping;
 import com.microsoft.playwright.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.recruitert.utils.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 public record ExternalWorkdayPostingFinder(@NotNull Page homepage) {
     private final static String NEXT_PAGE_BUTTON_SELECTOR =
         "#mainContent > div > div.css-1142bqn > section > div.css-3z7fsk > nav > div > button";
+    private final static String EXTERNAL_WORKDAY_BASE_URL = "https://usyd.wd105.myworkdayjobs.com";
 
     public List<String> findPostings() {
         final List<String> postings = new ArrayList<>();
@@ -45,7 +47,9 @@ public record ExternalWorkdayPostingFinder(@NotNull Page homepage) {
             if (link != null) {
                 try {
                     final String postingUrl = link.getAttribute("href");
-                    links.add(postingUrl);
+                    links.add(
+                        StringUtils.relativeUrlToAbsolute(EXTERNAL_WORKDAY_BASE_URL, postingUrl)
+                    );
                 } catch (final PlaywrightException _) {}
             }
         }
