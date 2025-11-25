@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4bf581c8-379d-4c90-8c03-195c2d9e5953" name="Changes" comment="Add Prettier and ESLint configs">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="4bf581c8-379d-4c90-8c03-195c2d9e5953" name="Changes" comment="Update `README.md`">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sources.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sources.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/controllers/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/models/JobPosting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/models/JobPosting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/ExternalWorkdayExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/ExternalWorkdayExtractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/ExternalWorkdayPostingFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/ExternalWorkdayPostingFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/ExternalWorkdayScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/ExternalWorkdayScraper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/JobPostingExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/JobPostingExtractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/recruitert/utils/RelativeDateParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/recruitert/utils/RelativeDateParser.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/recruitert/utils/StringUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/recruitert/utils/StringUtils.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +46,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Class" />
+        <option value="Kotlin Data Class" />
+        <option value="Interface" />
         <option value="Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -63,6 +69,10 @@
   }
 }]]></component>
   <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="$USER_HOME$/.gradle/wrapper/dists/gradle-9.2.1-bin/2t0n5ozlw9xmuyvbp7dnzaxug/gradle-9.2.1" javaHome="/Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home" gradleVersion="9.2.1" />
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -74,40 +84,56 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.RecruiterT [:org.recruitert.services.scraping.WorkdayScraper.main()].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHELLCHECK.PATH&quot;: &quot;/Users/luca/Library/Application Support/JetBrains/IntelliJIdea2025.2/plugins/Shell Script/shellcheck&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
-    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/luca/WebstormProjects/RecruiterT&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/luca/WebstormProjects/RecruiterT/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Download Sources.executor": "Run",
+    "Gradle.RecruiterT [:org.recruitert.services.scraping.ExternalWorkdayScraper.main()].executor": "Run",
+    "Gradle.RecruiterT [:org.recruitert.services.scraping.WorkdayScraper.main()].executor": "Run",
+    "Gradle.RecruiterT [:org.recruitert.utils.StackTraceKt.main()].executor": "Run",
+    "Gradle.RecruiterT [:org.recruitert.utils.StringUtils.main()].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHELLCHECK.PATH": "/Users/luca/Library/Application Support/JetBrains/IntelliJIdea2025.2/plugins/Shell Script/shellcheck",
+    "git-widget-placeholder": "main",
+    "js.debugger.nextJs.config.created.client": "true",
+    "js.debugger.nextJs.config.created.server": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/luca/WebstormProjects/RecruiterT",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "pnpm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors",
+    "ts.external.directory.path": "/Users/luca/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
       <recent name="org.recruitert.utils" />
       <recent name="org.recruitert.services.scraping" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.Next.js: debug client-side">
+  <component name="RunManager" selected="Kotlin.StackTraceKt">
+    <configuration name="ExternalWorkdayScraper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.recruitert.services.scraping.ExternalWorkdayScraper" />
+      <module name="RecruiterT.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.recruitert.services.scraping.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WorkdayScraper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.recruitert.services.scraping.WorkdayScraper" />
       <module name="org.recruitert.RecruiterT.main" />
@@ -123,6 +149,20 @@
     </configuration>
     <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
       <method v="2" />
+    </configuration>
+    <configuration name="StackTraceKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.recruitert.utils.StackTraceKt" />
+      <module name="RecruiterT.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringUtils" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.recruitert.utils.StringUtils" />
+      <module name="RecruiterT.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="org.recruitert.RecruiterT.main" />
@@ -141,6 +181,11 @@
       <envs />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.StackTraceKt" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -179,7 +224,17 @@
       <workItem from="1763516011058" duration="10000" />
       <workItem from="1763516027399" duration="915000" />
       <workItem from="1763635766856" duration="143000" />
-      <workItem from="1763687344548" duration="986000" />
+      <workItem from="1763687344548" duration="1740000" />
+      <workItem from="1763762357700" duration="94000" />
+      <workItem from="1763762822532" duration="13000" />
+      <workItem from="1763762867506" duration="57000" />
+      <workItem from="1763774068771" duration="3429000" />
+      <workItem from="1763795210719" duration="82000" />
+      <workItem from="1763848884466" duration="20000" />
+      <workItem from="1763965044872" duration="4000" />
+      <workItem from="1763965056135" duration="5485000" />
+      <workItem from="1764023645590" duration="1803000" />
+      <workItem from="1764058109618" duration="8084000" />
     </task>
     <task id="LOCAL-00001" summary="Implement posting component">
       <option name="closed" value="true" />
@@ -301,7 +356,23 @@
       <option name="project" value="LOCAL" />
       <updated>1763687581350</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Update project files&#10;&#10;Also change colour of sources slightly">
+      <option name="closed" value="true" />
+      <created>1763688404331</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1763688404331</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Update `README.md`">
+      <option name="closed" value="true" />
+      <created>1763688476652</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1763688476652</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,7 +393,9 @@
     <MESSAGE value="Find and extract data from individual external Workday postings" />
     <MESSAGE value="Implement parallel extraction of job postings for external Workday" />
     <MESSAGE value="Add Prettier and ESLint configs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Prettier and ESLint configs" />
+    <MESSAGE value="Update project files&#10;&#10;Also change colour of sources slightly" />
+    <MESSAGE value="Update `README.md`" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update `README.md`" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

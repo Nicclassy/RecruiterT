@@ -21,8 +21,9 @@ public class JobPosting {
     private String title;
     @NonNull
     private String url;
+    @Embedded
     @NonNull
-    private LocalDateTime postingDate;
+    private PostingDate postingDate;
     @NonNull
     private LocalDateTime expiryDate;
 
