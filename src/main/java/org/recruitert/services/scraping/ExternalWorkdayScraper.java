@@ -7,14 +7,12 @@ import org.jetbrains.annotations.NotNull;
 import org.recruitert.models.JobPosting;
 import org.recruitert.utils.StringUtils;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public record ExternalWorkdayScraper(@NotNull Browser browser) {
-    private final static Locator.WaitForOptions WAIT_FOR_VISIBLE_OPTIONS = new Locator.WaitForOptions()
-        .setState(WaitForSelectorState.VISIBLE)
+    private final static Locator.WaitForOptions WAIT_FOR_OPTIONS = new Locator.WaitForOptions()
+        .setState(WaitForSelectorState.ATTACHED)
         .setTimeout(3000);
 
     public Page searchCasualJobs() {
@@ -41,44 +39,35 @@ public record ExternalWorkdayScraper(@NotNull Browser browser) {
         );
         viewJobsButton.click();
 
+
         final PageLocator pageLocator = new PageLocator(
             currentPage,
-            WAIT_FOR_VISIBLE_OPTIONS,
+            WAIT_FOR_OPTIONS,
             new String[] { StringUtils.concatenate(
                 "#mainContent > div > div.css-1wnbqgd > div.css-mifb2i >",
                 "fieldset > ul > li.css-6n7j50 > div > button"
             )}
         );
         pageLocator.waitUntilPresent();
+        currentPage.reload();
+        currentPage.waitForLoadState(LoadState.NETWORKIDLE);
         return currentPage;
     }
 
     public List<JobPosting> findJobs(final @NotNull List<String> urls) {
-        try (
-            final ExecutorService executor = Executors.newCachedThreadPool()
-        ) {
-            final List<CompletableFuture<JobPosting>> futures = urls
-                .stream()
-                .map(url -> CompletableFuture.supplyAsync(() -> {
-                    final Page page = browser.newPage();
-                    page.navigate(url);
-                    page.waitForLoadState(LoadState.NETWORKIDLE);
+        final List<JobPosting> postings = new ArrayList<>();
+        final Page page = browser.newPage();
+        final LocatorFactory factory = new LocatorFactory(page);
+        for (final String url : urls) {
+            page.reload();
+            page.navigate(url);
+            page.waitForLoadState(LoadState.NETWORKIDLE);
 
-                    final LocatorFactory factory = new LocatorFactory(page);
-                    final ExternalWorkdayExtractor extractor = new ExternalWorkdayExtractor(factory, url);
-                    return JobPosting.from(extractor);
-                }, executor))
-                .toList();
-
-            final CompletableFuture<Void> all = CompletableFuture.allOf(
-                futures.toArray(new CompletableFuture[0])
-            );
-            all.join();
-
-            return futures.stream()
-                .map(CompletableFuture::join)
-                .toList();
+            final ExternalWorkdayExtractor extractor = new ExternalWorkdayExtractor(factory, url);
+            postings.add(JobPosting.from(extractor));
         }
+
+        return postings;
     }
 
     public static void main(String[] args) {
