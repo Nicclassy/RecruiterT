@@ -5,15 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4bf581c8-379d-4c90-8c03-195c2d9e5953" name="Changes" comment="Update `README.md`">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/models/TemporalValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/recruitert/utils/TemporalValueParser.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/controllers/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/converters/DateOrTimeConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/converters/TemporalValueConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/models/DateOrTime.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/models/JobPosting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/models/JobPosting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/models/PostingDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/models/PostingOrExpiryDate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/ExternalWorkdayExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/ExternalWorkdayExtractor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/ExternalWorkdayPostingFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/ExternalWorkdayPostingFinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/ExternalWorkdayScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/ExternalWorkdayScraper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/JobPostingExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/JobPostingExtractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/recruitert/utils/RelativeDateParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/recruitert/utils/RelativeDateParser.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/recruitert/utils/StringUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/recruitert/utils/StringUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/recruitert/utils/RelativeDateParser.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/recruitert/utils/TextExtractor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/recruitert/utils/TextExtractor.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +54,6 @@
         <option value="Kotlin Data Class" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -62,17 +66,17 @@
     &quot;assignee&quot;: &quot;Nicclassy&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Nicclassy/RecruiterT.git",
-    "accountId": "37f76d40-b49b-4550-9404-f5a726738e35"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Nicclassy/RecruiterT.git&quot;,
+    &quot;accountId&quot;: &quot;37f76d40-b49b-4550-9404-f5a726738e35&quot;
   }
-}]]></component>
+}</component>
   <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="$USER_HOME$/.gradle/wrapper/dists/gradle-9.2.1-bin/2t0n5ozlw9xmuyvbp7dnzaxug/gradle-9.2.1" javaHome="/Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home" gradleVersion="9.2.1" />
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -89,8 +93,8 @@
     "Gradle.Download Sources.executor": "Run",
     "Gradle.RecruiterT [:org.recruitert.services.scraping.ExternalWorkdayScraper.main()].executor": "Run",
     "Gradle.RecruiterT [:org.recruitert.services.scraping.WorkdayScraper.main()].executor": "Run",
-    "Gradle.RecruiterT [:org.recruitert.utils.StackTraceKt.main()].executor": "Run",
     "Gradle.RecruiterT [:org.recruitert.utils.StringUtils.main()].executor": "Run",
+    "JavaScript Debug.Next.js: debug client-side.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -120,7 +124,7 @@
       <recent name="org.recruitert.services.scraping" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.StackTraceKt">
+  <component name="RunManager" selected="Application.ExternalWorkdayScraper">
     <configuration name="ExternalWorkdayScraper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.recruitert.services.scraping.ExternalWorkdayScraper" />
       <module name="RecruiterT.main" />
@@ -150,13 +154,6 @@
     <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
       <method v="2" />
     </configuration>
-    <configuration name="StackTraceKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.recruitert.utils.StackTraceKt" />
-      <module name="RecruiterT.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="StringUtils" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.recruitert.utils.StringUtils" />
       <module name="RecruiterT.main" />
@@ -181,11 +178,6 @@
       <envs />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Kotlin.StackTraceKt" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -234,7 +226,8 @@
       <workItem from="1763965044872" duration="4000" />
       <workItem from="1763965056135" duration="5485000" />
       <workItem from="1764023645590" duration="1803000" />
-      <workItem from="1764058109618" duration="8084000" />
+      <workItem from="1764058109618" duration="6215000" />
+      <workItem from="1764137629276" duration="5336000" />
     </task>
     <task id="LOCAL-00001" summary="Implement posting component">
       <option name="closed" value="true" />

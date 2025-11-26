@@ -1,11 +1,14 @@
 package org.recruitert.controllers;
 
+import org.recruitert.models.TemporalValue;
 import org.recruitert.models.JobPosting;
+import org.recruitert.models.PostingOrExpiryDate;
 import org.recruitert.models.PostingSource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,8 +22,12 @@ public final class HomeController {
         final JobPosting jobPosting = new JobPosting();
         jobPosting.setTitle("The backend sent you some data");
         jobPosting.setUrl("https://google.com");
-        jobPosting.setPostingDate(LocalDateTime.now().minusDays(1));
-        jobPosting.setPostingDate(LocalDateTime.now().plusHours(6));
+        jobPosting.setPostingDate(new PostingOrExpiryDate(new TemporalValue.Date(
+            LocalDate.now().minusDays(1)
+        )));
+        jobPosting.setExpiryDate(new PostingOrExpiryDate(new TemporalValue.Time(
+            LocalDateTime.now().plusHours(6))
+        ));
         jobPosting.setSources(
             List.of(
                 PostingSource.WORKDAY_INTERNAL,

@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.recruitert.services.scraping.JobPostingExtractor;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -23,9 +22,10 @@ public class JobPosting {
     private String url;
     @Embedded
     @NonNull
-    private PostingDate postingDate;
+    private PostingOrExpiryDate postingDate;
+    @Embedded
     @NonNull
-    private LocalDateTime expiryDate;
+    private PostingOrExpiryDate expiryDate;
 
     @ElementCollection(targetClass = PostingSource.class)
     @Enumerated(EnumType.STRING)

@@ -1,11 +1,11 @@
 # RecruiterT
-Job postings are very boring nowadays, and every man and his dog wants the same tech stack. 
+Job postings are very boring nowadays, and every recruiter and their dog wants the same tech stack. 
 This is especially true for internships and graduate roles. 
 However, some people don't like the programming languages and frameworks that these companies require, and 
 that's an unfortunate reality but something that must be accepted nonetheless. 
 
 Based on an examination of many graduate roles and internships, RecruiterT is an app that on the surface
-is appealing to recruiters. It uses a generic tech stack: a React-based frontend with TypeScript and Tailwind, 
+is appealing to recruiters. It uses a generic tech stack: a React-based frontend (NextJS) with TypeScript and Tailwind, 
 a Spring Boot/Java backend, both chosen due to their popularity in the industry, and Hibernate, as many
 jobs desire proficiency in an ORM. There are also other tools that don't fit neatly, such as Docker Compose to use 
 a PostgreSQL database (both of which are very common tools), and JUnit for testing (this is yet to be done). 
