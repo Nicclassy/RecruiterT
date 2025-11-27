@@ -20,6 +20,8 @@ public class JobPosting {
     private String title;
     @NonNull
     private String url;
+    private PostingState state = PostingState.DEFAULT;
+
     @Embedded
     @NonNull
     private PostingOrExpiryDate postingDate;
@@ -32,7 +34,7 @@ public class JobPosting {
     @NonNull
     private List<PostingSource> sources;
 
-    public static JobPosting from(JobPostingExtractor extractor) {
+    public static JobPosting from(final JobPostingExtractor extractor) {
         return new JobPosting(
             extractor.title(),
             extractor.url(),
@@ -40,5 +42,9 @@ public class JobPosting {
             extractor.expiryDate(),
             extractor.sources()
         );
+    }
+
+    public boolean hasExpired() {
+        return expiryDate.getValue().hasExpired();
     }
 }
