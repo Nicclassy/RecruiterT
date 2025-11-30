@@ -3,26 +3,43 @@ package org.recruitert.services.scraping;
 import com.microsoft.playwright.*;
 import com.microsoft.playwright.options.LoadState;
 import com.microsoft.playwright.options.WaitForSelectorState;
-import org.jetbrains.annotations.NotNull;
+import lombok.AllArgsConstructor;
 import org.recruitert.models.JobPosting;
+import org.recruitert.models.PostingSourceScraper;
 import org.recruitert.utils.StringUtils;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public record ExternalWorkdayScraper(@NotNull Browser browser) {
+
+@Qualifier("WORKDAY_EXTERNAL")
+@Service
+@AllArgsConstructor
+public class ExternalWorkdayScraper implements PostingSourceScraper {
     private final static Locator.WaitForOptions WAIT_FOR_OPTIONS = new Locator.WaitForOptions()
         .setState(WaitForSelectorState.ATTACHED)
         .setTimeout(3000);
 
-    public Page searchCasualJobs() {
-        final Page currentPage = browser.newPage();
-        currentPage.navigate(
+    private final Browser browser;
+
+    public List<JobPosting> findJobPostings() {
+        final Page page = browser.newPage();
+        enableCasualJobsFilter(page);
+
+        final ExternalWorkdayPostingFinder postingFinder = new ExternalWorkdayPostingFinder(page);
+        final List<String> urls = postingFinder.findPostings();
+        return findJobPostings(browser, urls);
+    }
+
+    private void enableCasualJobsFilter(final Page page) {
+        page.navigate(
             "https://usyd.wd105.myworkdayjobs.com/en-GB/USYD_EXTERNAL_CAREER_SITE"
         );
-        currentPage.waitForLoadState(LoadState.NETWORKIDLE);
+        page.waitForLoadState(LoadState.NETWORKIDLE);
 
-        final LocatorFactory factory = new LocatorFactory(currentPage);
+        final LocatorFactory factory = new LocatorFactory(page);
 
         final Locator moreButton = factory.locator(
             "#mainContent > div > div.css-1wnbqgd > fieldset > div:nth-child(5) > button"
@@ -41,7 +58,7 @@ public record ExternalWorkdayScraper(@NotNull Browser browser) {
 
 
         final PageLocator pageLocator = new PageLocator(
-            currentPage,
+            page,
             WAIT_FOR_OPTIONS,
             new String[] { StringUtils.concatenate(
                 "#mainContent > div > div.css-1wnbqgd > div.css-mifb2i >",
@@ -49,12 +66,11 @@ public record ExternalWorkdayScraper(@NotNull Browser browser) {
             )}
         );
         pageLocator.waitUntilPresent();
-        currentPage.reload();
-        currentPage.waitForLoadState(LoadState.NETWORKIDLE);
-        return currentPage;
+        page.reload();
+        page.waitForLoadState(LoadState.NETWORKIDLE);
     }
 
-    public List<JobPosting> findJobs(final @NotNull List<String> urls) {
+    private List<JobPosting> findJobPostings(final Browser browser, final List<String> urls) {
         final List<JobPosting> postings = new ArrayList<>();
         final Page page = browser.newPage();
         final LocatorFactory factory = new LocatorFactory(page);
@@ -67,6 +83,7 @@ public record ExternalWorkdayScraper(@NotNull Browser browser) {
             postings.add(JobPosting.from(extractor));
         }
 
+        page.close();
         return postings;
     }
 
@@ -77,16 +94,7 @@ public record ExternalWorkdayScraper(@NotNull Browser browser) {
             final Browser browser = playwright.chromium().launch(options)
         ) {
             final ExternalWorkdayScraper scraper = new ExternalWorkdayScraper(browser);
-            final Page page = scraper.searchCasualJobs();
-
-            final ExternalWorkdayPostingFinder postingFinder = new ExternalWorkdayPostingFinder(page);
-            final List<String> urls = postingFinder.findPostings();
-
-            for (final String url : urls) {
-                System.out.println(url);
-            }
-
-            final List<JobPosting> jobPostings = scraper.findJobs(urls);
+            final List<JobPosting> jobPostings = scraper.findJobPostings();
             for (final JobPosting jobPosting : jobPostings) {
                 System.out.println(jobPosting);
             }
