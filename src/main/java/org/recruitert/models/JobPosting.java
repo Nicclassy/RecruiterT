@@ -1,9 +1,10 @@
 package org.recruitert.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
-import org.recruitert.services.scraping.JobPostingExtractor;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -28,6 +29,9 @@ public class JobPosting {
     @Embedded
     @NonNull
     private PostingOrExpiryDate expiryDate;
+    @JsonIgnore
+    @Getter(lazy = true)
+    private final LocalDateTime expiryTime = expiryDate.getExpiryTime();
 
     @ElementCollection(targetClass = PostingSource.class)
     @Enumerated(EnumType.STRING)
