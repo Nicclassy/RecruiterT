@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4bf581c8-379d-4c90-8c03-195c2d9e5953" name="Changes" comment="Extend posting date model to encompass distant values and times">
+    <list default="true" id="4bf581c8-379d-4c90-8c03-195c2d9e5953" name="Changes" comment="Add `PostingState`">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/controllers/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/models/JobPosting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/models/JobPosting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/models/PostingOrExpiryDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/models/PostingOrExpiryDate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/models/TemporalValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/models/TemporalValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/ExternalWorkdayExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/ExternalWorkdayExtractor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/ExternalWorkdayPostingFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/ExternalWorkdayPostingFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/ExternalWorkdayScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/ExternalWorkdayScraper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/JobPostingExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/models/JobPostingExtractor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,10 +47,10 @@
       <list>
         <option value="Kotlin Class" />
         <option value="Kotlin Data Class" />
-        <option value="Interface" />
-        <option value="Class" />
         <option value="@Aspect" />
         <option value="Enum" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -117,13 +121,13 @@
       <recent name="org.recruitert.services.scraping" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.Next.js: debug client-side">
+  <component name="RunManager" selected="Application.ExternalWorkdayScraper">
     <configuration name="ExternalWorkdayScraper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.recruitert.services.scraping.ExternalWorkdayScraper" />
       <module name="RecruiterT.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.recruitert.services.scraping.*" />
+          <option name="PATTERN" value="org.recruitert.models.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -136,7 +140,7 @@
       <module name="org.recruitert.RecruiterT.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.recruitert.services.scraping.*" />
+          <option name="PATTERN" value="org.recruitert.models.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -226,6 +230,8 @@
       <workItem from="1764205190553" duration="2712000" />
       <workItem from="1764246515449" duration="2000" />
       <workItem from="1764246544107" duration="58000" />
+      <workItem from="1764246612807" duration="57000" />
+      <workItem from="1764462669796" duration="8448000" />
     </task>
     <task id="LOCAL-00001" summary="Implement posting component">
       <option name="closed" value="true" />
@@ -379,7 +385,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764161430617</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Add `PostingState`">
+      <option name="closed" value="true" />
+      <created>1764246666413</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1764246666413</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,7 +418,8 @@
     <MESSAGE value="Update `README.md`" />
     <MESSAGE value="Extend date parsing functionality" />
     <MESSAGE value="Extend posting date model to encompass distant values and times" />
-    <option name="LAST_COMMIT_MESSAGE" value="Extend posting date model to encompass distant values and times" />
+    <MESSAGE value="Add `PostingState`" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add `PostingState`" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
