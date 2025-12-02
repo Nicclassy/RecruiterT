@@ -8,9 +8,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Getter
-@Setter
-@ToString
+@Data
 @RequiredArgsConstructor
 @NoArgsConstructor
 public class JobPosting {
@@ -30,8 +28,7 @@ public class JobPosting {
     @NonNull
     private PostingOrExpiryDate expiryDate;
     @JsonIgnore
-    @Getter(lazy = true)
-    private final LocalDateTime expiryTime = expiryDate.getExpiryTime();
+    private LocalDateTime expiryTime;
 
     @ElementCollection(targetClass = PostingSource.class)
     @Enumerated(EnumType.STRING)
@@ -39,16 +36,26 @@ public class JobPosting {
     private List<PostingSource> sources;
 
     public static JobPosting from(final JobPostingExtractor extractor) {
-        return new JobPosting(
+        final JobPosting posting = new JobPosting(
             extractor.title(),
             extractor.url(),
             extractor.postingDate(),
             extractor.expiryDate(),
             extractor.sources()
         );
+        posting.expiryTime = posting.getExpiryDate().getValue().toLocalDateTime();
+        return posting;
+    }
+
+    public boolean isSamePostingAs(final JobPosting other) {
+        return url.equals(other.url);
     }
 
     public boolean hasExpired() {
-        return expiryDate.getValue().hasExpired();
+        return expiryDate.getValue().hasPassed();
+    }
+
+    public boolean hasExpiredPrematurely() {
+        return expiryTime.isBefore(LocalDateTime.now());
     }
 }

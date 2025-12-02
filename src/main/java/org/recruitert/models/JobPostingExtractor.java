@@ -1,7 +1,4 @@
-package org.recruitert.services.scraping;
-
-import org.recruitert.models.PostingOrExpiryDate;
-import org.recruitert.models.PostingSource;
+package org.recruitert.models;
 
 import java.util.List;
 
