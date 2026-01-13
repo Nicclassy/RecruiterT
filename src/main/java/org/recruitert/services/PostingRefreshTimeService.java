@@ -1,0 +1,60 @@
+package org.recruitert.services;
+
+import lombok.RequiredArgsConstructor;
+import org.recruitert.models.PostingRefreshTime;
+import org.recruitert.models.PostingSource;
+import org.recruitert.repositories.PostingRefreshTimeRepository;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.time.Duration;
+import java.time.Instant;
+import java.util.List;
+import java.util.Map;
+
+@Service
+@RequiredArgsConstructor
+public class PostingRefreshTimeService {
+    private static final Duration DEFAULT_REFRESH_DURATION = Duration.ofDays(1);
+    private static final List<PostingSource> PERMITTED_SOURCES =
+        List.of(PostingSource.WORKDAY_EXTERNAL);
+
+    private final Map<PostingSource, Duration> refreshDurationsBySource =
+        Map.of(PostingSource.WORKDAY_EXTERNAL, Duration.ofHours(3));
+
+    private final PostingRefreshTimeRepository refreshTimeRepository;
+
+    @Transactional
+    public boolean canRefresh(final PostingSource source, final Instant now) {
+        if (!PERMITTED_SOURCES.contains(source)) {
+            return false;
+        }
+
+        final Duration refreshDuration =
+            refreshDurationsBySource.getOrDefault(source, DEFAULT_REFRESH_DURATION);
+
+        final PostingRefreshTime refreshTime = refreshTimeRepository
+            .findById(source)
+            .orElseGet(() -> refreshTimeRepository.save(new PostingRefreshTime(source)));
+
+        if (!refreshTime.shouldUpdate(now, refreshDuration))
+            return false;
+
+        refreshTime.markAttempt(now);
+        return true;
+    }
+
+    @Transactional
+    public void markSuccess(final PostingSource source, final Instant now) {
+        refreshTimeRepository
+            .findById(source)
+            .ifPresent(refreshTime -> refreshTime.markSuccess(now));
+    }
+
+    @Transactional
+    public void markFailure(final PostingSource source, final Instant now) {
+        refreshTimeRepository
+            .findById(source)
+            .ifPresent(refreshTime -> refreshTime.markFailure(now));
+    }
+}
