@@ -4,18 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4bf581c8-379d-4c90-8c03-195c2d9e5953" name="Changes" comment="Add `JobPostingService` for abstracting repository operations">
+    <list default="true" id="4bf581c8-379d-4c90-8c03-195c2d9e5953" name="Changes" comment="Add scraping aspect for better exception diagnostics">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/aspects/ScrapingAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/aspects/StringAspect.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/configs/PostingSourceScraperConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/configs/PostingSourceScraperConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/controllers/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/models/JobPosting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/models/JobPosting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/models/TemporalValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/models/TemporalValue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/repositories/JobPostingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/repositories/JobPostingRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/services/JobPostingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/services/JobPostingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/ExternalWorkdayExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/ExternalWorkdayExtractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/ExternalWorkdayPostingFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/ExternalWorkdayPostingFinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/services/scraping/JobPostingExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/models/JobPostingExtractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,9 +48,9 @@
       <list>
         <option value="Kotlin Data Class" />
         <option value="@Aspect" />
-        <option value="Enum" />
         <option value="Interface" />
         <option value="Kotlin Class" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -92,7 +91,9 @@
     &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.RecruiterT [:org.recruitert.services.scraping.ExternalWorkdayScraper.main()].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.RecruiterT [:org.recruitert.services.scraping.WorkdayScraper.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RecruiterT [:org.recruitert.utils.ColoursKt.main()].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.RecruiterT [:org.recruitert.utils.StringUtils.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RecruiterT [:org.recruitert.utils.TimerKt.main()].executor&quot;: &quot;Run&quot;,
     &quot;JavaScript Debug.Next.js: debug client-side.executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -113,7 +114,7 @@
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/luca/WebstormProjects/RecruiterT/node_modules/typescript/lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/luca/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -123,7 +124,7 @@
       <recent name="org.recruitert.services.scraping" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.Next.js: debug client-side">
+  <component name="RunManager" selected="Kotlin.TimerKt">
     <configuration name="ExternalWorkdayScraper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.recruitert.services.scraping.ExternalWorkdayScraper" />
       <module name="RecruiterT.main" />
@@ -153,6 +154,13 @@
     <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
       <method v="2" />
     </configuration>
+    <configuration name="ColoursKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.recruitert.utils.ColoursKt" />
+      <module name="RecruiterT.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="StringUtils" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.recruitert.utils.StringUtils" />
       <module name="RecruiterT.main" />
@@ -160,8 +168,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TimerKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.recruitert.utils.TimerKt" />
+      <module name="RecruiterT.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="org.recruitert.RecruiterT.main" />
+      <module name="RecruiterT.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.recruitert.Main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -177,6 +192,12 @@
       <envs />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.TimerKt" />
+        <item itemvalue="Kotlin.ColoursKt" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -244,6 +265,17 @@
       <workItem from="1764655874492" duration="4079000" />
       <workItem from="1764671550982" duration="38000" />
       <workItem from="1764673070452" duration="10000" />
+      <workItem from="1764673092944" duration="487000" />
+      <workItem from="1764742837063" duration="743000" />
+      <workItem from="1764752528849" duration="9000" />
+      <workItem from="1764828807490" duration="1160000" />
+      <workItem from="1764933425611" duration="1000" />
+      <workItem from="1764934009758" duration="70000" />
+      <workItem from="1764934098555" duration="600000" />
+      <workItem from="1765060029906" duration="9000" />
+      <workItem from="1765588265907" duration="1495000" />
+      <workItem from="1765769942673" duration="7705000" />
+      <workItem from="1768252446433" duration="8637000" />
     </task>
     <task id="LOCAL-00001" summary="Implement posting component">
       <option name="closed" value="true" />
@@ -429,17 +461,69 @@
       <option name="project" value="LOCAL" />
       <updated>1764472095177</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Store the expiry time of postings">
+      <option name="closed" value="true" />
+      <created>1764673218769</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1764673218769</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Store the expiry time of job postings">
+      <option name="closed" value="true" />
+      <created>1764673461543</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1764673461543</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Store the expiry time of job postings">
+      <option name="closed" value="true" />
+      <created>1764673546150</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1764673546150</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Make refresh posting times persistent">
+      <option name="closed" value="true" />
+      <created>1764673560534</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1764673560534</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Implement refresh mechanisms for posting sources">
+      <option name="closed" value="true" />
+      <created>1768297981837</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1768297981837</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Extend models&#10;&#10;In particular, refreshing can have multiple attempts">
+      <option name="closed" value="true" />
+      <created>1768298085113</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1768298085113</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Improve scraping code">
+      <option name="closed" value="true" />
+      <created>1768298307289</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1768298307289</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implement posting component" />
-    <MESSAGE value="Use Noto Sans and add grid for postings" />
-    <MESSAGE value="Create a JPA entity `JobPosting` and a `PostingSource` model" />
-    <MESSAGE value="Add Postgres via Docker Compose and configure Spring Boot accordingly" />
     <MESSAGE value="Enhance locator robustness and selector flexibility" />
     <MESSAGE value="Create section headings component" />
     <MESSAGE value="Update layout and add app title" />
@@ -458,7 +542,14 @@
     <MESSAGE value="Use beans for Playwright/the browser/scrapers" />
     <MESSAGE value="Use an expiry `LocalDateTime` for more efficient querying" />
     <MESSAGE value="Add `JobPostingService` for abstracting repository operations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add `JobPostingService` for abstracting repository operations" />
+    <MESSAGE value="Store the expiry time of postings" />
+    <MESSAGE value="Store the expiry time of job postings" />
+    <MESSAGE value="Make refresh posting times persistent" />
+    <MESSAGE value="Implement refresh mechanisms for posting sources" />
+    <MESSAGE value="Extend models&#10;&#10;In particular, refreshing can have multiple attempts" />
+    <MESSAGE value="Improve scraping code" />
+    <MESSAGE value="Add scraping aspect for better exception diagnostics" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add scraping aspect for better exception diagnostics" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

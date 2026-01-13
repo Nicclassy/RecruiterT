@@ -37,6 +37,9 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     runtimeOnly("org.postgresql:postgresql")
 
+    // Embedded Postgres
+    implementation("com.opentable.components:otj-pg-embedded:1.0.3")
+
     // Lombok
     compileOnly("org.projectlombok:lombok:1.18.42")
     annotationProcessor("org.projectlombok:lombok:1.18.42")
