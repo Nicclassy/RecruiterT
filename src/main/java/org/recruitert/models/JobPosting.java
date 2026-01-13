@@ -20,6 +20,8 @@ public class JobPosting {
     @NonNull
     private String url;
     private PostingState state = PostingState.DEFAULT;
+    @NonNull
+    private PostingKind kind;
 
     @Embedded
     @NonNull
@@ -39,6 +41,7 @@ public class JobPosting {
         final JobPosting posting = new JobPosting(
             extractor.title(),
             extractor.url(),
+            extractor.kind(),
             extractor.postingDate(),
             extractor.expiryDate(),
             extractor.sources()

@@ -5,6 +5,7 @@ import com.microsoft.playwright.options.LoadState;
 import com.microsoft.playwright.options.WaitForSelectorState;
 import lombok.AllArgsConstructor;
 import org.recruitert.models.JobPosting;
+import org.recruitert.models.PostingKind;
 import org.recruitert.models.PostingSourceScraper;
 import org.recruitert.utils.StringUtils;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -79,7 +80,8 @@ public class ExternalWorkdayScraper implements PostingSourceScraper {
             page.navigate(url);
             page.waitForLoadState(LoadState.NETWORKIDLE);
 
-            final ExternalWorkdayExtractor extractor = new ExternalWorkdayExtractor(factory, url);
+            // TODO: this must be changed. Just a temporary fix
+            final ExternalWorkdayExtractor extractor = new ExternalWorkdayExtractor(factory, url, PostingKind.CASUAL);
             postings.add(JobPosting.from(extractor));
         }
 

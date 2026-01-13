@@ -2,6 +2,8 @@ package org.recruitert.services.scraping;
 
 import com.microsoft.playwright.*;
 import org.jetbrains.annotations.NotNull;
+import org.recruitert.models.JobPostingExtractor;
+import org.recruitert.models.PostingKind;
 import org.recruitert.models.PostingOrExpiryDate;
 import org.recruitert.models.PostingSource;
 import org.recruitert.utils.StringUtils;
@@ -12,11 +14,17 @@ import java.util.List;
 
 public record ExternalWorkdayExtractor(
     @NotNull LocatorFactory factory,
-    @NotNull String postingUrl
+    @NotNull String postingUrl,
+    @NotNull PostingKind postingKind
 ) implements JobPostingExtractor {
     @Override
     public String url() {
         return postingUrl;
+    }
+
+    @Override
+    public PostingKind kind() {
+        return postingKind;
     }
 
     @Override

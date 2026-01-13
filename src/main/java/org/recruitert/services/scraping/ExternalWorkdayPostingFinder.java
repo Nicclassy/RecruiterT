@@ -32,6 +32,7 @@ public record ExternalWorkdayPostingFinder(@NotNull Page homepage) {
                 locator.click();
         } while (pagesRemaining);
 
+        homepage.close();
         return postings;
     }
 
@@ -50,7 +51,7 @@ public record ExternalWorkdayPostingFinder(@NotNull Page homepage) {
                     links.add(
                         StringUtils.relativeUrlToAbsolute(EXTERNAL_WORKDAY_BASE_URL, postingUrl)
                     );
-                } catch (final PlaywrightException _) {}
+                } catch (final PlaywrightException ignored) {}
             }
         }
 
