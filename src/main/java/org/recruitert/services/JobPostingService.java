@@ -1,7 +1,6 @@
 package org.recruitert.services;
 
-import jakarta.transaction.Transactional;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.recruitert.models.JobPosting;
 import org.recruitert.models.PostingState;
 import org.recruitert.repositories.JobPostingRepository;
@@ -11,20 +10,34 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class JobPostingService {
     private final JobPostingRepository repository;
 
     public List<JobPosting> findHomePostings() {
-        return repository
-            .findByStateAndExpiryTimeBefore(PostingState.DEFAULT, LocalDateTime.now());
+        return repository.findByStateAndExpiryTimeBefore(
+            PostingState.DEFAULT,
+            LocalDateTime.now()
+        );
     }
 
-    @Transactional
+    public List<JobPosting> findSavedPostings() {
+        return repository.findByState(PostingState.SAVED);
+    }
+
+    public List<JobPosting> findArchivedPostings() {
+        return repository.findByState(PostingState.ARCHIVED);
+    }
+
+    public List<JobPosting> findIgnoredPostings() {
+        return repository.findByState(PostingState.IGNORED);
+    }
+
     public JobPosting updateJobState(final Long jobId, final PostingState state) {
         final JobPosting jobPosting = repository
             .findById(jobId)
             .orElseThrow();
+
         jobPosting.setState(state);
         return repository.save(jobPosting);
     }
