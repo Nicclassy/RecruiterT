@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4bf581c8-379d-4c90-8c03-195c2d9e5953" name="Changes" comment="Add scraping aspect for better exception diagnostics">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/aspects/ScrapingAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/aspects/StringAspect.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/configs/PostingSourceScraperConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/configs/PostingSourceScraperConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/controllers/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/controllers/JobPostingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/models/PostingRefreshTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/models/PostingRefreshTime.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/repositories/JobPostingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/repositories/JobPostingRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/services/JobPostingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/services/JobPostingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/services/PostingRefreshService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/services/PostingRefreshService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/services/PostingRefreshTimeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/services/PostingRefreshTimeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -275,7 +274,8 @@
       <workItem from="1765060029906" duration="9000" />
       <workItem from="1765588265907" duration="1495000" />
       <workItem from="1765769942673" duration="7705000" />
-      <workItem from="1768252446433" duration="8637000" />
+      <workItem from="1768252446433" duration="8719000" />
+      <workItem from="1768338660546" duration="8443000" />
     </task>
     <task id="LOCAL-00001" summary="Implement posting component">
       <option name="closed" value="true" />
@@ -517,7 +517,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768298307289</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Add scraping aspect for better exception diagnostics">
+      <option name="closed" value="true" />
+      <created>1768298618400</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1768298618400</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

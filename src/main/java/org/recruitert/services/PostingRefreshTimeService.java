@@ -5,7 +5,6 @@ import org.recruitert.models.PostingRefreshTime;
 import org.recruitert.models.PostingSource;
 import org.recruitert.repositories.PostingRefreshTimeRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Duration;
 import java.time.Instant;
@@ -16,6 +15,8 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class PostingRefreshTimeService {
     private static final Duration DEFAULT_REFRESH_DURATION = Duration.ofDays(1);
+    private static final Duration RETRY_DELAY = Duration.ofMinutes(15);
+
     private static final List<PostingSource> PERMITTED_SOURCES =
         List.of(PostingSource.WORKDAY_EXTERNAL);
 
@@ -24,7 +25,6 @@ public class PostingRefreshTimeService {
 
     private final PostingRefreshTimeRepository refreshTimeRepository;
 
-    @Transactional
     public boolean canRefresh(final PostingSource source, final Instant now) {
         if (!PERMITTED_SOURCES.contains(source)) {
             return false;
@@ -37,24 +37,10 @@ public class PostingRefreshTimeService {
             .findById(source)
             .orElseGet(() -> refreshTimeRepository.save(new PostingRefreshTime(source)));
 
-        if (!refreshTime.shouldUpdate(now, refreshDuration))
+        if (!refreshTime.canUpdate(now, refreshDuration, RETRY_DELAY))
             return false;
 
-        refreshTime.markAttempt(now);
+        refreshTime.markInProgress(now);
         return true;
-    }
-
-    @Transactional
-    public void markSuccess(final PostingSource source, final Instant now) {
-        refreshTimeRepository
-            .findById(source)
-            .ifPresent(refreshTime -> refreshTime.markSuccess(now));
-    }
-
-    @Transactional
-    public void markFailure(final PostingSource source, final Instant now) {
-        refreshTimeRepository
-            .findById(source)
-            .ifPresent(refreshTime -> refreshTime.markFailure(now));
     }
 }
