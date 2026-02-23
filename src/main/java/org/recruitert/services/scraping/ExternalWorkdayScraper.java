@@ -26,12 +26,14 @@ public class ExternalWorkdayScraper implements PostingSourceScraper {
     private final Browser browser;
 
     public List<JobPosting> findJobPostings() {
-        final Page page = browser.newPage();
-        enableCasualJobsFilter(page);
+        try (final BrowserContext context = browser.newContext()) {
+            final Page page = context.newPage();
+            enableCasualJobsFilter(page);
 
-        final ExternalWorkdayPostingFinder postingFinder = new ExternalWorkdayPostingFinder(page);
-        final List<String> urls = postingFinder.findPostings();
-        return findJobPostings(browser, urls);
+            final ExternalWorkdayPostingFinder postingFinder = new ExternalWorkdayPostingFinder(page);
+            final List<String> urls = postingFinder.findPostings();
+            return findJobPostings(context, urls);
+        }
     }
 
     private void enableCasualJobsFilter(final Page page) {
@@ -71,21 +73,20 @@ public class ExternalWorkdayScraper implements PostingSourceScraper {
         page.waitForLoadState(LoadState.NETWORKIDLE);
     }
 
-    private List<JobPosting> findJobPostings(final Browser browser, final List<String> urls) {
+    private List<JobPosting> findJobPostings(final BrowserContext context, final List<String> urls) {
         final List<JobPosting> postings = new ArrayList<>();
-        final Page page = browser.newPage();
-        final LocatorFactory factory = new LocatorFactory(page);
         for (final String url : urls) {
-            page.reload();
-            page.navigate(url);
-            page.waitForLoadState(LoadState.NETWORKIDLE);
+            try (final Page page = context.newPage()) {
+                final LocatorFactory factory = new LocatorFactory(page);
+                page.navigate(url);
+                page.waitForLoadState(LoadState.NETWORKIDLE);
 
-            // TODO: this must be changed. Just a temporary fix
-            final ExternalWorkdayExtractor extractor = new ExternalWorkdayExtractor(factory, url, PostingKind.CASUAL);
-            postings.add(JobPosting.from(extractor));
+                // TODO: this must be changed. Just a temporary fix
+                final ExternalWorkdayExtractor extractor = new ExternalWorkdayExtractor(factory, url, PostingKind.CASUAL);
+                postings.add(JobPosting.from(extractor));
+            }
         }
 
-        page.close();
         return postings;
     }
 

@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @Data
@@ -32,10 +31,9 @@ public class JobPosting {
     @JsonIgnore
     private LocalDateTime expiryTime;
 
-    @ElementCollection(targetClass = PostingSource.class)
     @Enumerated(EnumType.STRING)
     @NonNull
-    private List<PostingSource> sources;
+    private PostingSource source;
 
     public static JobPosting from(final JobPostingExtractor extractor) {
         final JobPosting posting = new JobPosting(
@@ -44,7 +42,7 @@ public class JobPosting {
             extractor.kind(),
             extractor.postingDate(),
             extractor.expiryDate(),
-            extractor.sources()
+            extractor.source()
         );
         posting.expiryTime = posting.getExpiryDate().getValue().toLocalDateTime();
         return posting;

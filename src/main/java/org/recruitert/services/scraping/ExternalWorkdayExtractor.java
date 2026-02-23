@@ -10,8 +10,6 @@ import org.recruitert.utils.StringUtils;
 import org.recruitert.utils.TemporalValueParser;
 import org.recruitert.utils.TextExtractor;
 
-import java.util.List;
-
 public record ExternalWorkdayExtractor(
     @NotNull LocatorFactory factory,
     @NotNull String postingUrl,
@@ -58,7 +56,7 @@ public record ExternalWorkdayExtractor(
     }
 
     @Override
-    public List<PostingSource> sources() {
-        return List.of(PostingSource.WORKDAY_EXTERNAL);
+    public PostingSource source() {
+        return PostingSource.WORKDAY_EXTERNAL;
     }
 }
