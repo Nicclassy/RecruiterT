@@ -36,9 +36,10 @@ dependencies {
     // Hibernate
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     runtimeOnly("org.postgresql:postgresql")
+    runtimeOnly("com.h2database:h2")
 
-    // Embedded Postgres
-    implementation("com.opentable.components:otj-pg-embedded:1.0.3")
+    // Testcontainers Postgres
+    implementation("org.testcontainers:postgresql")
 
     // Lombok
     compileOnly("org.projectlombok:lombok:1.18.42")

@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4bf581c8-379d-4c90-8c03-195c2d9e5953" name="Changes" comment="Add scraping aspect for better exception diagnostics">
+    <list default="true" id="4bf581c8-379d-4c90-8c03-195c2d9e5953" name="Changes" comment="Make each job have just one source">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/configs/PostingSourceScraperConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/configs/PostingSourceScraperConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/controllers/JobPostingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/models/PostingRefreshTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/models/PostingRefreshTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/repositories/JobPostingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/repositories/JobPostingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/services/JobPostingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/services/JobPostingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/services/PostingRefreshService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/services/PostingRefreshService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/services/PostingRefreshTimeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/services/PostingRefreshTimeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/configs/DatabaseConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/configs/DatabaseConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/recruitert/services/PostingUpdateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/recruitert/services/PostingUpdateService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,38 +83,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.RecruiterT [:org.recruitert.services.scraping.ExternalWorkdayScraper.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.RecruiterT [:org.recruitert.services.scraping.WorkdayScraper.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.RecruiterT [:org.recruitert.utils.ColoursKt.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.RecruiterT [:org.recruitert.utils.StringUtils.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.RecruiterT [:org.recruitert.utils.TimerKt.main()].executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.Next.js: debug client-side.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHELLCHECK.PATH&quot;: &quot;/Users/luca/Library/Application Support/JetBrains/IntelliJIdea2025.2/plugins/Shell Script/shellcheck&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
-    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/luca/WebstormProjects/RecruiterT&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/luca/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build RecruiterT.executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
+    "Gradle.RecruiterT [:org.recruitert.services.scraping.ExternalWorkdayScraper.main()].executor": "Run",
+    "Gradle.RecruiterT [:org.recruitert.services.scraping.WorkdayScraper.main()].executor": "Run",
+    "Gradle.RecruiterT [:org.recruitert.utils.ColoursKt.main()].executor": "Run",
+    "Gradle.RecruiterT [:org.recruitert.utils.StringUtils.main()].executor": "Run",
+    "Gradle.RecruiterT [:org.recruitert.utils.TimerKt.main()].executor": "Run",
+    "JavaScript Debug.Next.js: debug client-side.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHELLCHECK.PATH": "/Users/luca/Library/Application Support/JetBrains/IntelliJIdea2025.2/plugins/Shell Script/shellcheck",
+    "git-widget-placeholder": "main",
+    "js.debugger.nextJs.config.created.client": "true",
+    "js.debugger.nextJs.config.created.server": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/luca/WebstormProjects/RecruiterT",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "pnpm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/Users/luca/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
       <recent name="org.recruitert.utils" />
@@ -275,7 +274,17 @@
       <workItem from="1765588265907" duration="1495000" />
       <workItem from="1765769942673" duration="7705000" />
       <workItem from="1768252446433" duration="8719000" />
-      <workItem from="1768338660546" duration="8443000" />
+      <workItem from="1768338660546" duration="8951000" />
+      <workItem from="1768433027910" duration="1621000" />
+      <workItem from="1768479575430" duration="7679000" />
+      <workItem from="1768555803922" duration="601000" />
+      <workItem from="1768644689234" duration="597000" />
+      <workItem from="1769031723102" duration="7161000" />
+      <workItem from="1769484338908" duration="152000" />
+      <workItem from="1769484495771" duration="2202000" />
+      <workItem from="1771372782512" duration="602000" />
+      <workItem from="1771825395702" duration="40000" />
+      <workItem from="1771825468996" duration="5339000" />
     </task>
     <task id="LOCAL-00001" summary="Implement posting component">
       <option name="closed" value="true" />
@@ -525,18 +534,53 @@
       <option name="project" value="LOCAL" />
       <updated>1768298618400</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Automate job updating via scheduling">
+      <option name="closed" value="true" />
+      <created>1768432761313</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1768432761313</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Improve posting finding">
+      <option name="closed" value="true" />
+      <created>1768432894295</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1768432894295</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Update Spring Boot API">
+      <option name="closed" value="true" />
+      <created>1768432925022</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1768432925022</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Improve scraping and add rescrape mechanisms">
+      <option name="closed" value="true" />
+      <created>1771881938567</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1771881938567</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Make each job have just one source">
+      <option name="closed" value="true" />
+      <created>1771881977414</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1771881977414</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Enhance locator robustness and selector flexibility" />
-    <MESSAGE value="Create section headings component" />
-    <MESSAGE value="Update layout and add app title" />
-    <MESSAGE value="Refactor Java/Kotlin code" />
-    <MESSAGE value="Add `RelativeDateParser`&#10;&#10;Uses @JvmName for differing semantics in Java/Kotlin. This is so that in Kotlin the function would be more appropriate (a top level function), whereas in Java, it would be bound to a class" />
     <MESSAGE value="Add posting options button and job posting grid" />
     <MESSAGE value="Implement an interface `JobPostingExtractor` for creating `JobPosting`s" />
     <MESSAGE value="Find and extract data from individual external Workday postings" />
@@ -557,7 +601,12 @@
     <MESSAGE value="Extend models&#10;&#10;In particular, refreshing can have multiple attempts" />
     <MESSAGE value="Improve scraping code" />
     <MESSAGE value="Add scraping aspect for better exception diagnostics" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add scraping aspect for better exception diagnostics" />
+    <MESSAGE value="Automate job updating via scheduling" />
+    <MESSAGE value="Improve posting finding" />
+    <MESSAGE value="Update Spring Boot API" />
+    <MESSAGE value="Improve scraping and add rescrape mechanisms" />
+    <MESSAGE value="Make each job have just one source" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make each job have just one source" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
