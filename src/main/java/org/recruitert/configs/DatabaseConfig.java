@@ -10,7 +10,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @ConditionalOnProperty(
-    name = "app.embedded-postgres.enabled",
+    name = "app.testcontainers-postgres.enabled",
     havingValue = "true"
 )
 
