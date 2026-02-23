@@ -53,12 +53,7 @@ public final class JobPostingsController {
         jobPosting.setExpiryDate(new PostingOrExpiryDate(new TemporalValue.Time(
             LocalDateTime.now().plusHours(6))
         ));
-        jobPosting.setSources(
-            List.of(
-                PostingSource.WORKDAY_INTERNAL,
-                PostingSource.WORKDAY_EXTERNAL
-            )
-        );
+        jobPosting.setSource(PostingSource.WORKDAY_INTERNAL);
         jobPostings.add(jobPosting);
         return jobPostings;
     }

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public final class PostingUpdateScheduler {
     public final PostingUpdateService postingUpdateService;
 
-    @Scheduled(fixedDelay = 60_000)
+    @Scheduled(fixedDelayString = "${app.scraping.update-fixed-delay-ms:60000}")
     public void updateJobs() {
         postingUpdateService.updateAllSources();
     }

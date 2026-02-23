@@ -1,6 +1,8 @@
 package org.recruitert.services;
 
+import jakarta.persistence.OptimisticLockException;
 import lombok.RequiredArgsConstructor;
+import org.jetbrains.annotations.Nullable;
 import org.recruitert.models.PostingRefreshTime;
 import org.recruitert.models.PostingSource;
 import org.recruitert.repositories.PostingRefreshTimeRepository;
@@ -25,9 +27,11 @@ public class PostingRefreshTimeService {
 
     private final PostingRefreshTimeRepository refreshTimeRepository;
 
-    public boolean canRefresh(final PostingSource source, final Instant now) {
+    public @Nullable PostingRefreshTime tryRefresh(
+        final PostingSource source, final Instant now
+    ) {
         if (!PERMITTED_SOURCES.contains(source)) {
-            return false;
+            return null;
         }
 
         final Duration refreshDuration =
@@ -38,9 +42,14 @@ public class PostingRefreshTimeService {
             .orElseGet(() -> refreshTimeRepository.save(new PostingRefreshTime(source)));
 
         if (!refreshTime.canUpdate(now, refreshDuration, RETRY_DELAY))
-            return false;
+            return null;
 
         refreshTime.markInProgress(now);
-        return true;
+        try {
+            refreshTimeRepository.saveAndFlush(refreshTime);
+            return refreshTime;
+        } catch (final OptimisticLockException e) {
+            return null;
+        }
     }
 }
